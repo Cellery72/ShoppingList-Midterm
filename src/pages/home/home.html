@@ -16,7 +16,7 @@
       <ion-col>
         <ion-item>
           <ion-label stacked>Enter a name for your list</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="listname"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
@@ -26,19 +26,28 @@
         <!-- List itself -->
         <ion-list no-lines margin-top>
           <!-- template for item -->
-          <ion-item *ngFor="let item of items">
-            <ion-label>{{item.name}}</ion-label>
+          <ion-item text-center *ngFor="let item of items">
+            <ion-input item-left type="text" [(ngModel)]="item.name"></ion-input>
+            <button item-right ion-button color="light" (click)="decrease(item)">-</button>
+            <ion-label item-right>{{item.quantity}}</ion-label>
+            <button item-right ion-button color="light" (click)="increase(item)">+</button>
           </ion-item>
         </ion-list>
       </ion-col>
     </ion-row>
 
+
+    <ion-row padding id="add_row">
+      <ion-col width-50 offset-25>
+        <button ion-button full color="primary" (click)="addItem()">Add new Item</button>
+      </ion-col>
+    </ion-row>
     <ion-row padding id="button_row">
       <ion-col width-33>
         <button ion-button color="secondary">Save</button>
       </ion-col>
       <ion-col offset-33 width-33>
-        <button ion-button color="danger">Cancel</button>
+        <button ion-button color="danger" (click)="reset()">Cancel</button>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -1,3 +1,25 @@
-page-home {
+ion-content {
+  height: 100vh;
+  overflow: none;
+}
 
+#add_row {
+  position: fixed;
+  bottom: 15vh;
+  right: 0;
+  left: 0;
+}
+
+#button_row {
+  position: fixed;
+  bottom: 5vh;
+  right: 0;
+  left: 0;
+}
+#items-list{
+    overflow:auto;
+}
+#increase{
+    position:absolute;
+    right:0;    
 }
