@@ -1,14 +1,45 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<!-- Main Content-->
+<ion-content>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <!-- Grid used for layout-->
+  <ion-grid>
+
+    <!-- Title -->
+    <ion-row text-center padding-bottom id="title">
+      <ion-col>
+        <h1 no-padding>Your Personal Shopping List!</h1>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label stacked>Enter a name for your list</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row id="items-list">
+      <ion-col>
+        <!-- List itself -->
+        <ion-list no-lines margin-top>
+          <!-- template for item -->
+          <ion-item *ngFor="let item of items">
+            <ion-label>{{item.name}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row padding id="button_row">
+      <ion-col width-33>
+        <button ion-button color="secondary">Save</button>
+      </ion-col>
+      <ion-col offset-33 width-33>
+        <button ion-button color="danger">Cancel</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
